@@ -9,6 +9,12 @@
 	bottom: 10px;
 	right: 10px;
 }
+.season-display.winter i {
+	color: blueviolet;
+}
+.season-display.summer i {
+	color: lightcoral;
+}
 .season-display {
 	display: flex;
 	justify-content: center;
@@ -16,9 +22,9 @@
 	height: 100vh;
 }
 .summer {
-	background-color: aliceblue;
+	background-color: orange;
 }
 
 .winter {
-	background-color: lightyellow;
+	background-color: aliceblue;
 }

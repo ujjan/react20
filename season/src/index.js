@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 
 class App extends React.Component {
 	state = { latitude: null, err: '' };
@@ -13,8 +14,7 @@ class App extends React.Component {
 			(err) => this.setState({ err: err.message })
 		);
 	}
-
-	render() {
+	renderBodyContent() {
 		if (this.state.latitude != null) {
 			return (
 				<div>
@@ -29,12 +29,12 @@ class App extends React.Component {
 				</div>
 			);
 		} else {
-			return (
-				<div>
-					<div>Loding...</div>
-				</div>
-			);
+			return <Spinner message="Please grant permission" />;
 		}
+	}
+
+	render() {
+		return <div>{this.renderBodyContent()}</div>;
 	}
 }
 
