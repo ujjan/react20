@@ -1,10 +1,12 @@
+import './ImagesView.css';
 import React from 'react';
+import ImageCard from './ImageCard';
 
 const ImagesView = (props) => {
 	const imgs = props.images.map((image) => {
-		return <img src={image.urls.regular} key={image.id} alt={image.description} />;
+		return <ImageCard key={image.id} image={image} />;
 	});
-	return <div>{imgs}</div>;
+	return <div className="image-list">{imgs}</div>;
 };
 
 export default ImagesView;
